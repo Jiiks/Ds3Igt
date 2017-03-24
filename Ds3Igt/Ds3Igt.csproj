@@ -68,7 +68,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="LiveSplit.Core">
-      <HintPath>E:\Downloads\LiveSplit_1.6.9\LiveSplit.Core.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Souls\LS\LiveSplit.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveSplit.Timer">
+      <HintPath>..\..\..\..\Desktop\Souls\LS\Components\LiveSplit.Timer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -81,11 +84,14 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="UpdateManager">
-      <HintPath>E:\Downloads\LiveSplit_1.6.9\UpdateManager.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Souls\LS\UpdateManager.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
+    <Compile Include="Ds3AutoSplitter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Ds3Component.cs" />
     <Compile Include="Ds3Control.cs">
       <SubType>UserControl</SubType>
@@ -95,6 +101,8 @@
     </Compile>
     <Compile Include="Ds3Factory.cs" />
     <Compile Include="Ds3Pointer.cs" />
+    <Compile Include="Ds3Splits.cs" />
+    <Compile Include="Injections.cs" />
     <Compile Include="Native.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

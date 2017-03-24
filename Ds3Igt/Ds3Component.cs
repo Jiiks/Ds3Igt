@@ -17,6 +17,7 @@ namespace Ds3Igt
         private InfoTimeComponent _infoTimeComponent;
         private RegularTimeFormatter _timeFormatter;
         private Ds3Pointer Pointer;
+        private Ds3AutoSplitter _splitter;
 
         public Ds3Component(LiveSplitState state) {
             _control = new Ds3Control();
@@ -33,6 +34,8 @@ namespace Ds3Igt
             };
 
             Pointer = new Ds3Pointer();
+
+            _splitter = new Ds3AutoSplitter(state, _control.splitSettings);
         }
 
         public void Dispose() => _infoTimeComponent.Dispose();
@@ -76,6 +79,21 @@ namespace Ds3Igt
             if (_oldMillis <= 0) _oldMillis = 0;
 
             state.SetGameTime(new TimeSpan(0, 0, 0, 0, _oldMillis <= 1 ? 1 : _oldMillis));
+
+            //autostart timer. Might be worth changing this to something based on some memory flag
+            if (_control.cb_autoStartTimer.Checked && millis > 0 && millis < 500)
+            {
+                if (state.CurrentPhase == TimerPhase.NotRunning)
+                {
+                    TimerModel timer = new TimerModel();
+                    timer.CurrentState = state;
+                    timer.Start();
+                }
+            }
+
+            //autosplit
+            if (_control.cb_autoSplit.Checked)
+                _splitter.AttemptSplit();
         }
     }
 }
