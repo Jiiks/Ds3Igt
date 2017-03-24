@@ -203,7 +203,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(188, 13);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Dark Souls 3 IGT Timer v1.3.2 by Jiiks";
+            this.label4.Text = "Dark Souls 3 IGT Timer v1.3.3 by Jiiks";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // linkLabel1
