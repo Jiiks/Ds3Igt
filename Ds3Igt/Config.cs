@@ -23,6 +23,8 @@
         public static int[] Offsets1900 = { 0xA4 };
         public static long BasePointer11100 = 0x144737698;
         public static int[] Offsets11100 = { 0xA4 };
+        public static long BasePointer11200 = 0x14473A818;
+        public static int[] Offsets11200 = { 0xA4 };
 
     }
 }
