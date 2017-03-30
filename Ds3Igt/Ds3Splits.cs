@@ -23,6 +23,15 @@ namespace Ds3Igt
                 coord.Add(new MemoryWatcher<float>(new DeepPointer(baseOffset, new int[] { xOffset + 0x04 })));
                 coord.Add(new MemoryWatcher<float>(new DeepPointer(baseOffset, new int[] { xOffset + 0x08 })));
             }
+            public PlayerPos(int baseOffset, int[] xOffsets)
+            {
+                coord = new MemoryWatcherList();
+                coord.Add(new MemoryWatcher<float>(new DeepPointer(baseOffset, xOffsets)));
+                xOffsets[xOffsets.Length - 1] = xOffsets[xOffsets.Length - 1] + 0x04;
+                coord.Add(new MemoryWatcher<float>(new DeepPointer(baseOffset, xOffsets)));
+                xOffsets[xOffsets.Length - 1] = xOffsets[xOffsets.Length - 1] + 0x04;
+                coord.Add(new MemoryWatcher<float>(new DeepPointer(baseOffset, xOffsets)));
+            }
 
             public void update(Process dsProcess){ coord.UpdateAll(dsProcess);}
             public float get_x(Process dsProcess) { return (float)coord[0].Current; }
@@ -55,7 +64,7 @@ namespace Ds3Igt
 
         private interface ISplit
         {
-            bool split(Process dsProcess, TimerModel timer, PlayerPos playerPos, out bool loadSplitQueued);
+            bool split(Process dsProcess, TimerModel timer, PlayerPos playerPos, out bool loadSplitQueued, out bool finalSplitFlag);
             void init(Process dsProcess);
         }
 
@@ -90,9 +99,10 @@ namespace Ds3Igt
                 _enabled = !(((Convert.ToByte(_memWatcher.Current) >> _bitOffset) & 1) == 1);
             }
 
-            public bool split(Process dsProcess, TimerModel timer, PlayerPos playerPos, out bool loadSplitQueued)
+            public bool split(Process dsProcess, TimerModel timer, PlayerPos playerPos, out bool loadSplitQueued, out bool finalSplitFlag)
             {
                 loadSplitQueued = false;
+                finalSplitFlag = false;
                 if (!_enabled)
                     return false;
 
@@ -105,7 +115,12 @@ namespace Ds3Igt
                         //Trace.WriteLine("_settingsNode.Level == 0");
                         if (_settingsNode.Nodes[0].Checked) { Trace.WriteLine("split: " + _key); timer.Split(); _enabled = false; return true; }
                         if (_splitLevelOneOnLoad) {
-                            if (_settingsNode.Nodes[1].Checked) { Trace.WriteLine("queued split: " + _key); loadSplitQueued = true; _enabled = false; return true; }
+                            if (_settingsNode.Nodes[1].Checked) { Trace.WriteLine("queued split: " + _key); loadSplitQueued = true; _enabled = false;
+                                if (_settingsNode.Nodes[1].Parent.Name == "SoulofCinder") {
+                                    loadSplitQueued = false;
+                                    finalSplitFlag = true;
+                                }
+                                return true; }
                         }
                     }
                     else
@@ -138,9 +153,10 @@ namespace Ds3Igt
 
             public void init(Process dsProcess) { }
 
-            public bool split(Process dsProcess, TimerModel timer, PlayerPos playerPos, out bool loadSplitQueued)
+            public bool split(Process dsProcess, TimerModel timer, PlayerPos playerPos, out bool loadSplitQueued, out bool finalSplitFlag)
             {
                 loadSplitQueued = false;
+                finalSplitFlag = false;
                 if (_enabled && _settingsNode.Checked) {
                     if(_bb.intersect(dsProcess, playerPos)) { Trace.WriteLine("BBsplit"); timer.Split(); _enabled = false; return true; }
                 }
@@ -159,6 +175,9 @@ namespace Ds3Igt
             switch (dsProcess.Modules[0].ModuleMemorySize)
             {
                 //will probably replace this with an injection too at some point
+                case 104140800: // "App v1.12, Reg v1.31"
+                    _playerPos = new PlayerPos(0x4763518, new int[] {0x40, 0x28, 0x80 });
+                    break;
                 case 104255488: // "App v1.11, Reg v1.30"
                     _playerPos = new PlayerPos(0x476D190, 0x50);
                     break;
@@ -195,9 +214,21 @@ namespace Ds3Igt
             splits.Add(new WFSplit("WyvernTele",          settings, worldFlagPointer, 0x2366,   0x04, false));
             splits.Add(new WFSplit("ChampionGundyr",      settings, worldFlagPointer, 0x5A64,   0x01));
             splits.Add(new WFSplit("TwinPrinces",         settings, worldFlagPointer, 0x3764,   0x01));
-            splits.Add(new WFSplit("SoulOfCinder",        settings, worldFlagPointer, 0x5F67,   0x07, false));
+            splits.Add(new WFSplit("SoulOfCinder",        settings, worldFlagPointer, 0x5F67,   0x07));
             splits.Add(new WFSplit("Gravetender",         settings, worldFlagPointer, 0x6468,   0x03));
             splits.Add(new WFSplit("Friede",              settings, worldFlagPointer, 0x6467,   0x07));
+            //DLC2
+            splits.Add(new WFSplit("DemonPrinces",        settings, worldFlagPointer, 0x75E7, 0x07, false));
+            splits.Add(new WFSplit("DemonBannerPickup",   settings, worldFlagPointer, 0x7AA5, 0x02, false));
+            splits.Add(new WFSplit("DemonTeleport",       settings, worldFlagPointer, 0x7AA5, 0x01, false));
+            splits.Add(new WFSplit("MidirCliff",          settings, worldFlagPointer, 0x7ABC, 0x06, false));
+            splits.Add(new WFSplit("Midir",               settings, worldFlagPointer, 0x7AE9, 0x05));
+            splits.Add(new WFSplit("Halflight",           settings, worldFlagPointer, 0x786C, 0x00));
+            //splits.Add(new WFSplit("HalflightElevator",   settings, worldFlagPointer, 0x7AA9, 0x03, false)); //this elevator is activated by default. No suitable flag is set to split here. Using BB instead.
+            //splits.Add(new WFSplit("HalflightElevator",   settings, worldFlagPointer, 0x78BC, 0x01, false));
+            splits.Add(new WFSplit("GaelTele",            settings, worldFlagPointer, 0x7F9A, 0x06, false));
+            splits.Add(new WFSplit("Gael",                settings, worldFlagPointer, 0x7FE7, 0x07));
+
             //misc splits
             splits.Add(new WFSplit("VilhelmStairs",       settings, worldFlagPointer, 0x644F,   0x05));
             splits.Add(new WFSplit("PerimeterBonfire",    settings, worldFlagPointer, 0x2F02,   0x07, false));
@@ -206,13 +237,15 @@ namespace Ds3Igt
                 splits.Add(new BBSplit("CatacombEntrance",  settings, new BoundingBox(366, -507, -257, 372, -501, -251)));
                 splits.Add(new BBSplit("PontiffExit",       settings, new BoundingBox(397, -1211, -223, 403, -1205, -220)));
                 splits.Add(new BBSplit("SageExit",          settings, new BoundingBox(-204, -450, -246 , -199, -441, -240)));
+                splits.Add(new BBSplit("HalflightElevator", settings, new BoundingBox(-392, -268, -52, -389, -265, -45)));
             }
         }
 
-        public void process(Process dsProcess, TimerModel timer, out bool loadSplitQueued)
+        public void process(Process dsProcess, TimerModel timer, out bool loadSplitQueued, out bool finalSplitFlag)
         {
 
             loadSplitQueued = false;
+            finalSplitFlag = false;
             if (!initilized)
             {
                 foreach (ISplit spl in splits)
@@ -225,7 +258,7 @@ namespace Ds3Igt
             {
                 foreach (ISplit spl in splits)
                 {
-                    if (spl.split(dsProcess, timer, _playerPos, out loadSplitQueued))
+                    if (spl.split(dsProcess, timer, _playerPos, out loadSplitQueued, out finalSplitFlag))
                         break;
                 }
             }

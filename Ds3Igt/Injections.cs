@@ -78,7 +78,7 @@ namespace Ds3Igt
             _baseAddress = _dsProcess.ReadPointer(_baseAddress);
             if (_baseAddress != IntPtr.Zero)
                 RemoveInjection();
-
+            Trace.WriteLine("worldFlagPtr: " + _baseAddress);
             return _baseAddress;
         }
 

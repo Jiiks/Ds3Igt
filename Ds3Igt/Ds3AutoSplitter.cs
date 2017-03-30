@@ -15,6 +15,7 @@ namespace Ds3Igt
         private int _splitAttemptCnt;
         private double _updateRateMuliplier; //default Component update rate is 60? We don't need this rate for splitting.
         private bool _loadSplitQueued;
+        private bool _finalSplitFlag;
         private TreeView _settings;
         private Ds3Splits _splits;
         private TimerModel _timer;
@@ -43,6 +44,7 @@ namespace Ds3Igt
             _dsHandle = IntPtr.Zero;
             _dsProcess = null;
             _loadSplitQueued = false;
+            _finalSplitFlag = false;
             _timerInj = null;
             _worldFlagInj = null;
             _splits = null;
@@ -52,6 +54,7 @@ namespace Ds3Igt
         private void ResetSplits()
         {
             _loadSplitQueued = false;
+            _finalSplitFlag = false;
             _initilized = false;
             _splits = null;
         }
@@ -61,8 +64,9 @@ namespace Ds3Igt
             _dsHandle = IntPtr.Zero;
             _dsProcess = null;
             _splitAttemptCnt = 0;
-            _updateRateMuliplier = 0.16;
+            _updateRateMuliplier = 0.2;
             _loadSplitQueued = false;
+            _finalSplitFlag = false;
             _timerInj = null;
             _worldFlagInj = null;
             _splits = null;
@@ -112,16 +116,26 @@ namespace Ds3Igt
                 if (_loadSplitQueued)
                 {
                     if (_timerInj.getOldTime() == _timerInj.getTime()) {
-                        _timer.Split();
-                        _loadSplitQueued = false;
+                            _timer.Split();
+                            _loadSplitQueued = false;
                     }
+                    return;
+                }
+
+                if (_finalSplitFlag)
+                {
+                    if (_timerInj.getTime() == 0)
+                    {
+                        _timer.Split();
+                        _finalSplitFlag = false;
+                    }  
                     return;
                 }
 
                 if (_timerInj.getTime() == 0)
                     return;
 
-                _splits.process(_dsProcess, _timer, out _loadSplitQueued);
+                _splits.process(_dsProcess, _timer, out _loadSplitQueued, out _finalSplitFlag);
             }
         }
 

@@ -24,124 +24,155 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ds3Control));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Next Load");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Gundyr", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Next Load");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Cinematic");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Vordt", new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode5,
-            treeNode6});
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Next Load");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Greatwood", new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode9});
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Next Load");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Stair activation");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Catacomb Entrance");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Abyss Watchers", new System.Windows.Forms.TreeNode[] {
-            treeNode11,
-            treeNode12,
-            treeNode13,
-            treeNode14});
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Next Load (after teleport)");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Teleport");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Wolnir", new System.Windows.Forms.TreeNode[] {
-            treeNode16,
-            treeNode17,
-            treeNode18});
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Exit Door");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Sage", new System.Windows.Forms.TreeNode[] {
-            treeNode20,
-            treeNode21});
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Next Load");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Deacons", new System.Windows.Forms.TreeNode[] {
-            treeNode23,
-            treeNode24});
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Exit Door");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Pontiff", new System.Windows.Forms.TreeNode[] {
-            treeNode26,
-            treeNode27});
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Next Load");
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Teleport");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Aldrich", new System.Windows.Forms.TreeNode[] {
-            treeNode29,
-            treeNode30,
-            treeNode31});
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Next Load");
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Yhorm", new System.Windows.Forms.TreeNode[] {
-            treeNode33,
-            treeNode34});
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Ladder");
-            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Dancer", new System.Windows.Forms.TreeNode[] {
-            treeNode36,
-            treeNode37});
-            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Next Load");
-            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Oceiros", new System.Windows.Forms.TreeNode[] {
-            treeNode39,
-            treeNode40});
-            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Teleport");
-            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Wyvern", new System.Windows.Forms.TreeNode[] {
-            treeNode42,
-            treeNode43});
-            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("Next Load");
-            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Old Demon King", new System.Windows.Forms.TreeNode[] {
-            treeNode45,
-            treeNode46});
-            System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("Next Load");
-            System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("Champion Gundyr", new System.Windows.Forms.TreeNode[] {
-            treeNode48,
-            treeNode49});
-            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("Next Load");
-            System.Windows.Forms.TreeNode treeNode53 = new System.Windows.Forms.TreeNode("Dragonslayer", new System.Windows.Forms.TreeNode[] {
-            treeNode51,
-            treeNode52});
-            System.Windows.Forms.TreeNode treeNode54 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode55 = new System.Windows.Forms.TreeNode("Next Load");
-            System.Windows.Forms.TreeNode treeNode56 = new System.Windows.Forms.TreeNode("Twin Princes", new System.Windows.Forms.TreeNode[] {
-            treeNode54,
-            treeNode55});
-            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("Next Load");
-            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("Gravetender", new System.Windows.Forms.TreeNode[] {
-            treeNode57,
-            treeNode58});
-            System.Windows.Forms.TreeNode treeNode60 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode61 = new System.Windows.Forms.TreeNode("Next Load");
-            System.Windows.Forms.TreeNode treeNode62 = new System.Windows.Forms.TreeNode("Sister Friede", new System.Windows.Forms.TreeNode[] {
-            treeNode60,
-            treeNode61});
-            System.Windows.Forms.TreeNode treeNode63 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode64 = new System.Windows.Forms.TreeNode("Next Load");
-            System.Windows.Forms.TreeNode treeNode65 = new System.Windows.Forms.TreeNode("Nameless King", new System.Windows.Forms.TreeNode[] {
-            treeNode63,
-            treeNode64});
-            System.Windows.Forms.TreeNode treeNode66 = new System.Windows.Forms.TreeNode("Death");
-            System.Windows.Forms.TreeNode treeNode67 = new System.Windows.Forms.TreeNode("Soul of Cinder", new System.Windows.Forms.TreeNode[] {
-            treeNode66});
-            System.Windows.Forms.TreeNode treeNode68 = new System.Windows.Forms.TreeNode("Perimeter Bonfire");
-            System.Windows.Forms.TreeNode treeNode69 = new System.Windows.Forms.TreeNode("Vilhelm Stairs");
-            System.Windows.Forms.TreeNode treeNode70 = new System.Windows.Forms.TreeNode("Misc", new System.Windows.Forms.TreeNode[] {
-            treeNode68,
-            treeNode69});
+            System.Windows.Forms.TreeNode treeNode89 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode90 = new System.Windows.Forms.TreeNode("Next Load");
+            System.Windows.Forms.TreeNode treeNode91 = new System.Windows.Forms.TreeNode("Gundyr", new System.Windows.Forms.TreeNode[] {
+            treeNode89,
+            treeNode90});
+            System.Windows.Forms.TreeNode treeNode92 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode93 = new System.Windows.Forms.TreeNode("Next Load");
+            System.Windows.Forms.TreeNode treeNode94 = new System.Windows.Forms.TreeNode("Cinematic");
+            System.Windows.Forms.TreeNode treeNode95 = new System.Windows.Forms.TreeNode("Vordt", new System.Windows.Forms.TreeNode[] {
+            treeNode92,
+            treeNode93,
+            treeNode94});
+            System.Windows.Forms.TreeNode treeNode96 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode97 = new System.Windows.Forms.TreeNode("Next Load");
+            System.Windows.Forms.TreeNode treeNode98 = new System.Windows.Forms.TreeNode("Greatwood", new System.Windows.Forms.TreeNode[] {
+            treeNode96,
+            treeNode97});
+            System.Windows.Forms.TreeNode treeNode99 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode100 = new System.Windows.Forms.TreeNode("Next Load");
+            System.Windows.Forms.TreeNode treeNode101 = new System.Windows.Forms.TreeNode("Stair activation");
+            System.Windows.Forms.TreeNode treeNode102 = new System.Windows.Forms.TreeNode("Catacomb Entrance");
+            System.Windows.Forms.TreeNode treeNode103 = new System.Windows.Forms.TreeNode("Abyss Watchers", new System.Windows.Forms.TreeNode[] {
+            treeNode99,
+            treeNode100,
+            treeNode101,
+            treeNode102});
+            System.Windows.Forms.TreeNode treeNode104 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode105 = new System.Windows.Forms.TreeNode("Next Load (after teleport)");
+            System.Windows.Forms.TreeNode treeNode106 = new System.Windows.Forms.TreeNode("Teleport");
+            System.Windows.Forms.TreeNode treeNode107 = new System.Windows.Forms.TreeNode("Wolnir", new System.Windows.Forms.TreeNode[] {
+            treeNode104,
+            treeNode105,
+            treeNode106});
+            System.Windows.Forms.TreeNode treeNode108 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode109 = new System.Windows.Forms.TreeNode("Exit Door");
+            System.Windows.Forms.TreeNode treeNode110 = new System.Windows.Forms.TreeNode("Sage", new System.Windows.Forms.TreeNode[] {
+            treeNode108,
+            treeNode109});
+            System.Windows.Forms.TreeNode treeNode111 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode112 = new System.Windows.Forms.TreeNode("Next Load");
+            System.Windows.Forms.TreeNode treeNode113 = new System.Windows.Forms.TreeNode("Deacons", new System.Windows.Forms.TreeNode[] {
+            treeNode111,
+            treeNode112});
+            System.Windows.Forms.TreeNode treeNode114 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode115 = new System.Windows.Forms.TreeNode("Exit Door");
+            System.Windows.Forms.TreeNode treeNode116 = new System.Windows.Forms.TreeNode("Pontiff", new System.Windows.Forms.TreeNode[] {
+            treeNode114,
+            treeNode115});
+            System.Windows.Forms.TreeNode treeNode117 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode118 = new System.Windows.Forms.TreeNode("Next Load");
+            System.Windows.Forms.TreeNode treeNode119 = new System.Windows.Forms.TreeNode("Teleport");
+            System.Windows.Forms.TreeNode treeNode120 = new System.Windows.Forms.TreeNode("Aldrich", new System.Windows.Forms.TreeNode[] {
+            treeNode117,
+            treeNode118,
+            treeNode119});
+            System.Windows.Forms.TreeNode treeNode121 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode122 = new System.Windows.Forms.TreeNode("Next Load");
+            System.Windows.Forms.TreeNode treeNode123 = new System.Windows.Forms.TreeNode("Yhorm", new System.Windows.Forms.TreeNode[] {
+            treeNode121,
+            treeNode122});
+            System.Windows.Forms.TreeNode treeNode124 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode125 = new System.Windows.Forms.TreeNode("Ladder");
+            System.Windows.Forms.TreeNode treeNode126 = new System.Windows.Forms.TreeNode("Dancer", new System.Windows.Forms.TreeNode[] {
+            treeNode124,
+            treeNode125});
+            System.Windows.Forms.TreeNode treeNode127 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode128 = new System.Windows.Forms.TreeNode("Next Load");
+            System.Windows.Forms.TreeNode treeNode129 = new System.Windows.Forms.TreeNode("Oceiros", new System.Windows.Forms.TreeNode[] {
+            treeNode127,
+            treeNode128});
+            System.Windows.Forms.TreeNode treeNode130 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode131 = new System.Windows.Forms.TreeNode("Teleport");
+            System.Windows.Forms.TreeNode treeNode132 = new System.Windows.Forms.TreeNode("Wyvern", new System.Windows.Forms.TreeNode[] {
+            treeNode130,
+            treeNode131});
+            System.Windows.Forms.TreeNode treeNode133 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode134 = new System.Windows.Forms.TreeNode("Next Load");
+            System.Windows.Forms.TreeNode treeNode135 = new System.Windows.Forms.TreeNode("Old Demon King", new System.Windows.Forms.TreeNode[] {
+            treeNode133,
+            treeNode134});
+            System.Windows.Forms.TreeNode treeNode136 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode137 = new System.Windows.Forms.TreeNode("Next Load");
+            System.Windows.Forms.TreeNode treeNode138 = new System.Windows.Forms.TreeNode("Champion Gundyr", new System.Windows.Forms.TreeNode[] {
+            treeNode136,
+            treeNode137});
+            System.Windows.Forms.TreeNode treeNode139 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode140 = new System.Windows.Forms.TreeNode("Next Load");
+            System.Windows.Forms.TreeNode treeNode141 = new System.Windows.Forms.TreeNode("Dragonslayer", new System.Windows.Forms.TreeNode[] {
+            treeNode139,
+            treeNode140});
+            System.Windows.Forms.TreeNode treeNode142 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode143 = new System.Windows.Forms.TreeNode("Next Load");
+            System.Windows.Forms.TreeNode treeNode144 = new System.Windows.Forms.TreeNode("Twin Princes", new System.Windows.Forms.TreeNode[] {
+            treeNode142,
+            treeNode143});
+            System.Windows.Forms.TreeNode treeNode145 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode146 = new System.Windows.Forms.TreeNode("Next Load");
+            System.Windows.Forms.TreeNode treeNode147 = new System.Windows.Forms.TreeNode("Gravetender", new System.Windows.Forms.TreeNode[] {
+            treeNode145,
+            treeNode146});
+            System.Windows.Forms.TreeNode treeNode148 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode149 = new System.Windows.Forms.TreeNode("Next Load");
+            System.Windows.Forms.TreeNode treeNode150 = new System.Windows.Forms.TreeNode("Sister Friede", new System.Windows.Forms.TreeNode[] {
+            treeNode148,
+            treeNode149});
+            System.Windows.Forms.TreeNode treeNode151 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode152 = new System.Windows.Forms.TreeNode("Next Load");
+            System.Windows.Forms.TreeNode treeNode153 = new System.Windows.Forms.TreeNode("Nameless King", new System.Windows.Forms.TreeNode[] {
+            treeNode151,
+            treeNode152});
+            System.Windows.Forms.TreeNode treeNode154 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode155 = new System.Windows.Forms.TreeNode("Banner Pickup");
+            System.Windows.Forms.TreeNode treeNode156 = new System.Windows.Forms.TreeNode("Teleport");
+            System.Windows.Forms.TreeNode treeNode157 = new System.Windows.Forms.TreeNode("Demon Princes", new System.Windows.Forms.TreeNode[] {
+            treeNode154,
+            treeNode155,
+            treeNode156});
+            System.Windows.Forms.TreeNode treeNode158 = new System.Windows.Forms.TreeNode("Defeated");
+            System.Windows.Forms.TreeNode treeNode159 = new System.Windows.Forms.TreeNode("Cliff Midir", new System.Windows.Forms.TreeNode[] {
+            treeNode158});
+            System.Windows.Forms.TreeNode treeNode160 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode161 = new System.Windows.Forms.TreeNode("Next Load");
+            System.Windows.Forms.TreeNode treeNode162 = new System.Windows.Forms.TreeNode("Midir", new System.Windows.Forms.TreeNode[] {
+            treeNode160,
+            treeNode161});
+            System.Windows.Forms.TreeNode treeNode163 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode164 = new System.Windows.Forms.TreeNode("Next Load");
+            System.Windows.Forms.TreeNode treeNode165 = new System.Windows.Forms.TreeNode("Elevator");
+            System.Windows.Forms.TreeNode treeNode166 = new System.Windows.Forms.TreeNode("Gael Teleport");
+            System.Windows.Forms.TreeNode treeNode167 = new System.Windows.Forms.TreeNode("Halflight", new System.Windows.Forms.TreeNode[] {
+            treeNode163,
+            treeNode164,
+            treeNode165,
+            treeNode166});
+            System.Windows.Forms.TreeNode treeNode168 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode169 = new System.Windows.Forms.TreeNode("Next Load");
+            System.Windows.Forms.TreeNode treeNode170 = new System.Windows.Forms.TreeNode("Gael", new System.Windows.Forms.TreeNode[] {
+            treeNode168,
+            treeNode169});
+            System.Windows.Forms.TreeNode treeNode171 = new System.Windows.Forms.TreeNode("Death");
+            System.Windows.Forms.TreeNode treeNode172 = new System.Windows.Forms.TreeNode("Quitout after linking the flame");
+            System.Windows.Forms.TreeNode treeNode173 = new System.Windows.Forms.TreeNode("Soul of Cinder", new System.Windows.Forms.TreeNode[] {
+            treeNode171,
+            treeNode172});
+            System.Windows.Forms.TreeNode treeNode174 = new System.Windows.Forms.TreeNode("Perimeter Bonfire (when lighting)");
+            System.Windows.Forms.TreeNode treeNode175 = new System.Windows.Forms.TreeNode("Vilhelm (quitout after lever pull)");
+            System.Windows.Forms.TreeNode treeNode176 = new System.Windows.Forms.TreeNode("Misc", new System.Windows.Forms.TreeNode[] {
+            treeNode174,
+            treeNode175});
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
@@ -375,14 +406,14 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(6, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 13);
+            this.label5.Size = new System.Drawing.Size(78, 13);
             this.label5.TabIndex = 20;
-            this.label5.Text = "v0.9 beta by B3LYP";
+            this.label5.Text = "v1.0 by B3LYP";
             // 
             // cb_autoStartTimer
             // 
             this.cb_autoStartTimer.AutoSize = true;
-            this.cb_autoStartTimer.Location = new System.Drawing.Point(114, 15);
+            this.cb_autoStartTimer.Location = new System.Drawing.Point(90, 15);
             this.cb_autoStartTimer.Name = "cb_autoStartTimer";
             this.cb_autoStartTimer.Size = new System.Drawing.Size(71, 17);
             this.cb_autoStartTimer.TabIndex = 19;
@@ -392,7 +423,7 @@
             // cb_autoSplit
             // 
             this.cb_autoSplit.AutoSize = true;
-            this.cb_autoSplit.Location = new System.Drawing.Point(188, 15);
+            this.cb_autoSplit.Location = new System.Drawing.Point(167, 15);
             this.cb_autoSplit.Name = "cb_autoSplit";
             this.cb_autoSplit.Size = new System.Drawing.Size(69, 17);
             this.cb_autoSplit.TabIndex = 18;
@@ -411,211 +442,263 @@
             this.splitSettings.CheckBoxes = true;
             this.splitSettings.Location = new System.Drawing.Point(215, 157);
             this.splitSettings.Name = "splitSettings";
-            treeNode1.Name = "Death";
-            treeNode1.Text = "Death";
-            treeNode2.Checked = true;
-            treeNode2.Name = "Door Load";
-            treeNode2.Text = "Next Load";
-            treeNode3.Checked = true;
-            treeNode3.Name = "Gundyr";
-            treeNode3.Text = "Gundyr";
-            treeNode4.Name = "Death";
-            treeNode4.Text = "Death";
-            treeNode5.Checked = true;
-            treeNode5.Name = "Next Load";
-            treeNode5.Text = "Next Load";
-            treeNode6.Name = "VordtTele";
-            treeNode6.Text = "Cinematic";
-            treeNode7.Checked = true;
-            treeNode7.Name = "Vordt";
-            treeNode7.Text = "Vordt";
-            treeNode8.Name = "Death";
-            treeNode8.Text = "Death";
-            treeNode9.Checked = true;
-            treeNode9.Name = "Next Load";
-            treeNode9.Text = "Next Load";
-            treeNode10.Checked = true;
-            treeNode10.Name = "Greatwood";
-            treeNode10.Text = "Greatwood";
-            treeNode11.Name = "Death";
-            treeNode11.Text = "Death";
-            treeNode12.Name = "Next Load";
-            treeNode12.Text = "Next Load";
-            treeNode13.Checked = true;
-            treeNode13.Name = "WatchersStairs";
-            treeNode13.Text = "Stair activation";
-            treeNode14.Name = "CatacombEntrance";
-            treeNode14.Text = "Catacomb Entrance";
-            treeNode15.Checked = true;
-            treeNode15.Name = "Watchers";
-            treeNode15.Text = "Abyss Watchers";
-            treeNode16.Name = "Death";
-            treeNode16.Text = "Death";
-            treeNode17.Name = "Next Load";
-            treeNode17.Text = "Next Load (after teleport)";
-            treeNode18.Checked = true;
-            treeNode18.Name = "WolnirTele";
-            treeNode18.Text = "Teleport";
-            treeNode19.Checked = true;
-            treeNode19.Name = "Wolnir";
-            treeNode19.Text = "Wolnir";
-            treeNode20.Name = "Death";
-            treeNode20.Text = "Death";
-            treeNode21.Checked = true;
-            treeNode21.Name = "SageExit";
-            treeNode21.Text = "Exit Door";
-            treeNode22.Checked = true;
-            treeNode22.Name = "Sage";
-            treeNode22.Text = "Sage";
-            treeNode23.Name = "Death";
-            treeNode23.Text = "Death";
-            treeNode24.Checked = true;
-            treeNode24.Name = "Next Load";
-            treeNode24.Text = "Next Load";
-            treeNode25.Checked = true;
-            treeNode25.Name = "Deacons";
-            treeNode25.Text = "Deacons";
-            treeNode26.Name = "Death";
-            treeNode26.Text = "Death";
-            treeNode27.Checked = true;
-            treeNode27.Name = "PontiffExit";
-            treeNode27.Text = "Exit Door";
-            treeNode28.Checked = true;
-            treeNode28.Name = "Pontiff";
-            treeNode28.Text = "Pontiff";
-            treeNode29.Checked = true;
-            treeNode29.Name = "Death";
-            treeNode29.Text = "Death";
-            treeNode30.Name = "Node0";
-            treeNode30.Text = "Next Load";
-            treeNode31.Name = "AldrichTele";
-            treeNode31.Text = "Teleport";
-            treeNode32.Checked = true;
-            treeNode32.Name = "Aldrich";
-            treeNode32.Text = "Aldrich";
-            treeNode33.Name = "Death";
-            treeNode33.Text = "Death";
-            treeNode34.Checked = true;
-            treeNode34.Name = "Next Load";
-            treeNode34.Text = "Next Load";
-            treeNode35.Checked = true;
-            treeNode35.Name = "Yhorm";
-            treeNode35.Text = "Yhorm";
-            treeNode36.Name = "Death";
-            treeNode36.Text = "Death";
-            treeNode37.Checked = true;
-            treeNode37.Name = "DancerLadder";
-            treeNode37.Text = "Ladder";
-            treeNode38.Checked = true;
-            treeNode38.Name = "Dancer";
-            treeNode38.Text = "Dancer";
-            treeNode39.Name = "Death";
-            treeNode39.Text = "Death";
-            treeNode40.Checked = true;
-            treeNode40.Name = "Next Load";
-            treeNode40.Text = "Next Load";
-            treeNode41.Checked = true;
-            treeNode41.Name = "Oceiros";
-            treeNode41.Text = "Oceiros";
-            treeNode42.Name = "Death";
-            treeNode42.Text = "Death";
-            treeNode43.Checked = true;
-            treeNode43.Name = "WyvernTele";
-            treeNode43.Text = "Teleport";
-            treeNode44.Checked = true;
-            treeNode44.Name = "Wyvern";
-            treeNode44.Text = "Wyvern";
-            treeNode45.Name = "Death";
-            treeNode45.Text = "Death";
-            treeNode46.Checked = true;
-            treeNode46.Name = "Next Load";
-            treeNode46.Text = "Next Load";
-            treeNode47.Checked = true;
-            treeNode47.Name = "ODK";
-            treeNode47.Text = "Old Demon King";
-            treeNode48.Name = "Death";
-            treeNode48.Text = "Death";
-            treeNode49.Checked = true;
-            treeNode49.Name = "Next Load";
-            treeNode49.Text = "Next Load";
-            treeNode50.Checked = true;
-            treeNode50.Name = "ChampionGundyr";
-            treeNode50.Text = "Champion Gundyr";
-            treeNode51.Name = "Death";
-            treeNode51.Text = "Death";
-            treeNode52.Checked = true;
-            treeNode52.Name = "Next Load";
-            treeNode52.Text = "Next Load";
-            treeNode53.Checked = true;
-            treeNode53.Name = "Dragonslayer";
-            treeNode53.Text = "Dragonslayer";
-            treeNode54.Name = "Death";
-            treeNode54.Text = "Death";
-            treeNode55.Checked = true;
-            treeNode55.Name = "Next Load";
-            treeNode55.Text = "Next Load";
-            treeNode56.Checked = true;
-            treeNode56.Name = "TwinPrinces";
-            treeNode56.Text = "Twin Princes";
-            treeNode57.Name = "Death";
-            treeNode57.Text = "Death";
-            treeNode58.Checked = true;
-            treeNode58.Name = "Next Load";
-            treeNode58.Text = "Next Load";
-            treeNode59.Checked = true;
-            treeNode59.Name = "Gravetender";
-            treeNode59.Text = "Gravetender";
-            treeNode60.Name = "Death";
-            treeNode60.Text = "Death";
-            treeNode61.Checked = true;
-            treeNode61.Name = "Next Load";
-            treeNode61.Text = "Next Load";
-            treeNode62.Checked = true;
-            treeNode62.Name = "Friede";
-            treeNode62.Text = "Sister Friede";
-            treeNode63.Name = "Death";
-            treeNode63.Text = "Death";
-            treeNode64.Checked = true;
-            treeNode64.Name = "Next Load";
-            treeNode64.Text = "Next Load";
-            treeNode65.Checked = true;
-            treeNode65.Name = "NamelessKing";
-            treeNode65.Text = "Nameless King";
-            treeNode66.Checked = true;
-            treeNode66.Name = "Death";
-            treeNode66.Text = "Death";
-            treeNode67.Checked = true;
-            treeNode67.Name = "SoulofCinder";
-            treeNode67.Text = "Soul of Cinder";
-            treeNode68.Name = "PerimeterBonfire";
-            treeNode68.Text = "Perimeter Bonfire";
-            treeNode69.Name = "VilhelmStairs";
-            treeNode69.Text = "Vilhelm Stairs";
-            treeNode70.Name = "Misc";
-            treeNode70.Text = "Misc";
+            treeNode89.Name = "Death";
+            treeNode89.Text = "Death";
+            treeNode90.Checked = true;
+            treeNode90.Name = "Door Load";
+            treeNode90.Text = "Next Load";
+            treeNode91.Checked = true;
+            treeNode91.Name = "Gundyr";
+            treeNode91.Text = "Gundyr";
+            treeNode92.Name = "Death";
+            treeNode92.Text = "Death";
+            treeNode93.Checked = true;
+            treeNode93.Name = "Next Load";
+            treeNode93.Text = "Next Load";
+            treeNode94.Name = "VordtTele";
+            treeNode94.Text = "Cinematic";
+            treeNode95.Checked = true;
+            treeNode95.Name = "Vordt";
+            treeNode95.Text = "Vordt";
+            treeNode96.Name = "Death";
+            treeNode96.Text = "Death";
+            treeNode97.Checked = true;
+            treeNode97.Name = "Next Load";
+            treeNode97.Text = "Next Load";
+            treeNode98.Checked = true;
+            treeNode98.Name = "Greatwood";
+            treeNode98.Text = "Greatwood";
+            treeNode99.Name = "Death";
+            treeNode99.Text = "Death";
+            treeNode100.Name = "Next Load";
+            treeNode100.Text = "Next Load";
+            treeNode101.Checked = true;
+            treeNode101.Name = "WatchersStairs";
+            treeNode101.Text = "Stair activation";
+            treeNode102.Name = "CatacombEntrance";
+            treeNode102.Text = "Catacomb Entrance";
+            treeNode103.Checked = true;
+            treeNode103.Name = "Watchers";
+            treeNode103.Text = "Abyss Watchers";
+            treeNode104.Name = "Death";
+            treeNode104.Text = "Death";
+            treeNode105.Name = "Next Load";
+            treeNode105.Text = "Next Load (after teleport)";
+            treeNode106.Checked = true;
+            treeNode106.Name = "WolnirTele";
+            treeNode106.Text = "Teleport";
+            treeNode107.Checked = true;
+            treeNode107.Name = "Wolnir";
+            treeNode107.Text = "Wolnir";
+            treeNode108.Name = "Death";
+            treeNode108.Text = "Death";
+            treeNode109.Checked = true;
+            treeNode109.Name = "SageExit";
+            treeNode109.Text = "Exit Door";
+            treeNode110.Checked = true;
+            treeNode110.Name = "Sage";
+            treeNode110.Text = "Sage";
+            treeNode111.Name = "Death";
+            treeNode111.Text = "Death";
+            treeNode112.Checked = true;
+            treeNode112.Name = "Next Load";
+            treeNode112.Text = "Next Load";
+            treeNode113.Checked = true;
+            treeNode113.Name = "Deacons";
+            treeNode113.Text = "Deacons";
+            treeNode114.Name = "Death";
+            treeNode114.Text = "Death";
+            treeNode115.Checked = true;
+            treeNode115.Name = "PontiffExit";
+            treeNode115.Text = "Exit Door";
+            treeNode116.Checked = true;
+            treeNode116.Name = "Pontiff";
+            treeNode116.Text = "Pontiff";
+            treeNode117.Checked = true;
+            treeNode117.Name = "Death";
+            treeNode117.Text = "Death";
+            treeNode118.Name = "Node0";
+            treeNode118.Text = "Next Load";
+            treeNode119.Name = "AldrichTele";
+            treeNode119.Text = "Teleport";
+            treeNode120.Checked = true;
+            treeNode120.Name = "Aldrich";
+            treeNode120.Text = "Aldrich";
+            treeNode121.Name = "Death";
+            treeNode121.Text = "Death";
+            treeNode122.Checked = true;
+            treeNode122.Name = "Next Load";
+            treeNode122.Text = "Next Load";
+            treeNode123.Checked = true;
+            treeNode123.Name = "Yhorm";
+            treeNode123.Text = "Yhorm";
+            treeNode124.Name = "Death";
+            treeNode124.Text = "Death";
+            treeNode125.Checked = true;
+            treeNode125.Name = "DancerLadder";
+            treeNode125.Text = "Ladder";
+            treeNode126.Checked = true;
+            treeNode126.Name = "Dancer";
+            treeNode126.Text = "Dancer";
+            treeNode127.Name = "Death";
+            treeNode127.Text = "Death";
+            treeNode128.Checked = true;
+            treeNode128.Name = "Next Load";
+            treeNode128.Text = "Next Load";
+            treeNode129.Checked = true;
+            treeNode129.Name = "Oceiros";
+            treeNode129.Text = "Oceiros";
+            treeNode130.Name = "Death";
+            treeNode130.Text = "Death";
+            treeNode131.Checked = true;
+            treeNode131.Name = "WyvernTele";
+            treeNode131.Text = "Teleport";
+            treeNode132.Checked = true;
+            treeNode132.Name = "Wyvern";
+            treeNode132.Text = "Wyvern";
+            treeNode133.Name = "Death";
+            treeNode133.Text = "Death";
+            treeNode134.Checked = true;
+            treeNode134.Name = "Next Load";
+            treeNode134.Text = "Next Load";
+            treeNode135.Checked = true;
+            treeNode135.Name = "ODK";
+            treeNode135.Text = "Old Demon King";
+            treeNode136.Name = "Death";
+            treeNode136.Text = "Death";
+            treeNode137.Checked = true;
+            treeNode137.Name = "Next Load";
+            treeNode137.Text = "Next Load";
+            treeNode138.Checked = true;
+            treeNode138.Name = "ChampionGundyr";
+            treeNode138.Text = "Champion Gundyr";
+            treeNode139.Name = "Death";
+            treeNode139.Text = "Death";
+            treeNode140.Checked = true;
+            treeNode140.Name = "Next Load";
+            treeNode140.Text = "Next Load";
+            treeNode141.Checked = true;
+            treeNode141.Name = "Dragonslayer";
+            treeNode141.Text = "Dragonslayer";
+            treeNode142.Name = "Death";
+            treeNode142.Text = "Death";
+            treeNode143.Checked = true;
+            treeNode143.Name = "Next Load";
+            treeNode143.Text = "Next Load";
+            treeNode144.Checked = true;
+            treeNode144.Name = "TwinPrinces";
+            treeNode144.Text = "Twin Princes";
+            treeNode145.Name = "Death";
+            treeNode145.Text = "Death";
+            treeNode146.Checked = true;
+            treeNode146.Name = "Next Load";
+            treeNode146.Text = "Next Load";
+            treeNode147.Checked = true;
+            treeNode147.Name = "Gravetender";
+            treeNode147.Text = "Gravetender";
+            treeNode148.Name = "Death";
+            treeNode148.Text = "Death";
+            treeNode149.Checked = true;
+            treeNode149.Name = "Next Load";
+            treeNode149.Text = "Next Load";
+            treeNode150.Checked = true;
+            treeNode150.Name = "Friede";
+            treeNode150.Text = "Sister Friede";
+            treeNode151.Name = "Death";
+            treeNode151.Text = "Death";
+            treeNode152.Checked = true;
+            treeNode152.Name = "Next Load";
+            treeNode152.Text = "Next Load";
+            treeNode153.Checked = true;
+            treeNode153.Name = "NamelessKing";
+            treeNode153.Text = "Nameless King";
+            treeNode154.Name = "Death";
+            treeNode154.Text = "Death";
+            treeNode155.Checked = true;
+            treeNode155.Name = "DemonBannerPickup";
+            treeNode155.Text = "Banner Pickup";
+            treeNode156.Name = "DemonTeleport";
+            treeNode156.Text = "Teleport";
+            treeNode157.Checked = true;
+            treeNode157.Name = "DemonPrinces";
+            treeNode157.Text = "Demon Princes";
+            treeNode158.Checked = true;
+            treeNode158.Name = "Death";
+            treeNode158.Text = "Defeated";
+            treeNode159.Checked = true;
+            treeNode159.Name = "MidirCliff";
+            treeNode159.Text = "Cliff Midir";
+            treeNode160.Name = "Death";
+            treeNode160.Text = "Death";
+            treeNode161.Checked = true;
+            treeNode161.Name = "Next Load";
+            treeNode161.Text = "Next Load";
+            treeNode162.Checked = true;
+            treeNode162.Name = "Midir";
+            treeNode162.Text = "Midir";
+            treeNode163.Name = "Death";
+            treeNode163.Text = "Death";
+            treeNode164.Name = "Next Load";
+            treeNode164.Text = "Next Load";
+            treeNode165.Checked = true;
+            treeNode165.Name = "HalflightElevator";
+            treeNode165.Text = "Elevator";
+            treeNode166.Name = "GaelTele";
+            treeNode166.Text = "Gael Teleport";
+            treeNode167.Checked = true;
+            treeNode167.Name = "Halflight";
+            treeNode167.Text = "Halflight";
+            treeNode168.Name = "Death";
+            treeNode168.Text = "Death";
+            treeNode169.Checked = true;
+            treeNode169.Name = "Next Load";
+            treeNode169.Text = "Next Load";
+            treeNode170.Checked = true;
+            treeNode170.Name = "Gael";
+            treeNode170.Text = "Gael";
+            treeNode171.Name = "Death";
+            treeNode171.Text = "Death";
+            treeNode172.Checked = true;
+            treeNode172.Name = "Next Load";
+            treeNode172.Text = "Quitout after linking the flame";
+            treeNode173.Checked = true;
+            treeNode173.Name = "SoulofCinder";
+            treeNode173.Text = "Soul of Cinder";
+            treeNode174.Name = "PerimeterBonfire";
+            treeNode174.Text = "Perimeter Bonfire (when lighting)";
+            treeNode175.Name = "VilhelmStairs";
+            treeNode175.Text = "Vilhelm (quitout after lever pull)";
+            treeNode176.Checked = true;
+            treeNode176.Name = "Misc";
+            treeNode176.Text = "Misc";
             this.splitSettings.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode7,
-            treeNode10,
-            treeNode15,
-            treeNode19,
-            treeNode22,
-            treeNode25,
-            treeNode28,
-            treeNode32,
-            treeNode35,
-            treeNode38,
-            treeNode41,
-            treeNode44,
-            treeNode47,
-            treeNode50,
-            treeNode53,
-            treeNode56,
-            treeNode59,
-            treeNode62,
-            treeNode65,
-            treeNode67,
-            treeNode70});
+            treeNode91,
+            treeNode95,
+            treeNode98,
+            treeNode103,
+            treeNode107,
+            treeNode110,
+            treeNode113,
+            treeNode116,
+            treeNode120,
+            treeNode123,
+            treeNode126,
+            treeNode129,
+            treeNode132,
+            treeNode135,
+            treeNode138,
+            treeNode141,
+            treeNode144,
+            treeNode147,
+            treeNode150,
+            treeNode153,
+            treeNode157,
+            treeNode159,
+            treeNode162,
+            treeNode167,
+            treeNode170,
+            treeNode173,
+            treeNode176});
             this.splitSettings.Size = new System.Drawing.Size(257, 325);
             this.splitSettings.TabIndex = 17;
             this.splitSettings.BeforeCheck += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeView2_BeforeCheck);
