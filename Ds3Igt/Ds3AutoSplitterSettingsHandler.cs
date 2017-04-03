@@ -65,7 +65,7 @@ namespace Ds3Igt
         {
             if (_autosplitterSettings.ContainsKey(cb_autoSplit.Name))
                 cb_autoSplit.Checked = Convert.ToBoolean(_autosplitterSettings[cb_autoSplit.Name]);
-            if (_autosplitterSettings.ContainsKey(cb_autoStartTimer.Name)) { }
+            if (_autosplitterSettings.ContainsKey(cb_autoStartTimer.Name)) 
                 cb_autoStartTimer.Checked = Convert.ToBoolean(_autosplitterSettings[cb_autoStartTimer.Name]);
         }
     }
