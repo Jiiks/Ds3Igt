@@ -231,7 +231,7 @@ namespace Ds3Igt
             splits.Add(new WFSplit("VilhelmStairs",       settings, worldFlagPointer, 0x644F,   0x05));
             //BBSplits
             splits.Add(new BBSplit("CatacombEntrance",  settings, new BoundingBox(366, -507, -257, 372, -501, -251)));
-            splits.Add(new BBSplit("PontiffExit",       settings, new BoundingBox(397, -1211, -223, 403, -1205, -220)));
+            splits.Add(new BBSplit("PontiffExit",       settings, new BoundingBox(397, -1211, -223, 403, -1205.5f, -220)));
             splits.Add(new BBSplit("SageExit",          settings, new BoundingBox(-204, -450, -248 , -199, -441, -238)));
             splits.Add(new BBSplit("HalflightElevator", settings, new BoundingBox(-392, -268, -52, -389, -265, -45)));
 
