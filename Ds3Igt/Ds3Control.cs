@@ -22,6 +22,7 @@ namespace Ds3Igt
             InitializeComponent();
             LocateDs3();
             _autoSplitterSettingsHandler = new Ds3AutoSplitterSettingsHandler(this.splitSettings.Nodes, this.cb_autoSplit, this.cb_autoStartTimer);
+            label4.Text = $"Dark Souls 3 IGT Timer v{Config.Version} by Jiiks";
         }
 
         private void LocateDs3(string basePath = null)
