@@ -109,10 +109,10 @@ namespace Ds3Igt
                 _memWatcher.Update(dsProcess);
                 if (_settingsNode.Checked && ((Convert.ToByte(_memWatcher.Old) >> _bitOffset) & 1) == 0 && ((Convert.ToByte(_memWatcher.Current) >> _bitOffset) & 1) == 1)
                 {
-                    //Trace.WriteLine("memory watcher changed: " + _key);
+                    Trace.WriteLine("memory watcher changed: " + _key);
                     if (_settingsNode.Level == 0)
                     {
-                        //Trace.WriteLine("_settingsNode.Level == 0");
+                        Trace.WriteLine("_settingsNode.Level == 0");
                         if (_settingsNode.Nodes[0].Checked) { Trace.WriteLine("split: " + _key); timer.Split(); _enabled = false; return true; }
                         if (_splitLevelOneOnLoad) {
                             if (_settingsNode.Nodes[1].Checked) { Trace.WriteLine("queued split: " + _key); loadSplitQueued = true; _enabled = false;
@@ -125,7 +125,8 @@ namespace Ds3Igt
                     }
                     else
                     {
-                        //Trace.WriteLine("_settingsNode.Level == 1");
+                        Trace.WriteLine("_settingsNode.Level == 1");
+                        Trace.WriteLine("node key " + _settingsNode.Name);
                         if (_settingsNode.Parent.Checked)
                         {
                             if (_splitLevelOneOnLoad) { Trace.WriteLine("queued split" + _key); loadSplitQueued = true; _enabled = false; return true; }
@@ -171,36 +172,36 @@ namespace Ds3Igt
         public Ds3Splits(Process dsProcess, IntPtr worldFlagPointer, TreeView settings)
         {
             initilized = false;
+            splits = new List<ISplit> { };
 
-            switch (dsProcess.Modules[0].ModuleMemorySize)
+            switch (dsProcess.MainModule.FileVersionInfo.FileVersion)
             {
-                //will probably replace this with an injection too at some point
-                case 104140800: // "App v1.12, Reg v1.31"
-                    _playerPos = new PlayerPos(0x4763518, new int[] {0x40, 0x28, 0x80 });
+                case "1.8.0.0": // "App v1.08, Reg v1.22"
+                    _playerPos = new PlayerPos(0x4703DF8, 0xA74);
+                    splits.Add(new WFSplit("PerimeterBonfire", settings, worldFlagPointer, 0x2F02, 0x07, false));
+                    
                     break;
-                case 104255488: // "App v1.11, Reg v1.30"
+                case "1.11.0.0": // "App v1.11, Reg v1.30"
                     _playerPos = new PlayerPos(0x476D190, 0x50);
                     break;
-                case 103211008: // "App v1.08, Reg v1.22"
-                    _playerPos = new PlayerPos(0x4703DF8, 0xA74);
-                    break;
-                case 109469696: // "App v1.04, Reg v1.05"
+                case "1.12.0.0": // "App v1.12, Reg v1.31"
+                default:
+                    _playerPos = new PlayerPos(0x4763518, new int[] { 0x40, 0x28, 0x80 });
+                    splits.Add(new WFSplit("PerimeterBonfire", settings, worldFlagPointer, 0x2D02, 0x07, false));
                     break;
             }
 
-            splits = new List<ISplit> { };
-            //unlikely that these offsets change. 
             splits.Add(new WFSplit("Gundyr",              settings, worldFlagPointer, 0x5A67,   0x07));
             splits.Add(new WFSplit("Greatwood",           settings, worldFlagPointer, 0x1967,   0x07));
             splits.Add(new WFSplit("Vordt",               settings, worldFlagPointer, 0xF67,    0x07));
-            splits.Add(new WFSplit("VordtTele",           settings, worldFlagPointer, 0x11C7,   0x01, false));
+            splits.Add(new WFSplit("VordtTeleport",       settings, worldFlagPointer, 0x11C7,   0x01, false));
             splits.Add(new WFSplit("Dancer",              settings, worldFlagPointer, 0xF6C,    0x05, false));
             splits.Add(new WFSplit("DancerLadder",        settings, worldFlagPointer, 0xF6D,    0x02, false));
             splits.Add(new WFSplit("Sage",                settings, worldFlagPointer, 0x2D69,   0x05, false));
             splits.Add(new WFSplit("Watchers",            settings, worldFlagPointer, 0x2D67,   0x07));
             splits.Add(new WFSplit("WatchersStairs",      settings, worldFlagPointer, 0x2FB7,   0x02, false));
             splits.Add(new WFSplit("Wolnir",              settings, worldFlagPointer, 0x5067,   0x07));
-            splits.Add(new WFSplit("WolnirTele",          settings, worldFlagPointer, 0x50E7,   0x07, false));
+            splits.Add(new WFSplit("WolnirTeleport",      settings, worldFlagPointer, 0x50E7,   0x07, false));
             splits.Add(new WFSplit("ODK",                 settings, worldFlagPointer, 0x5064,   0x01));
             splits.Add(new WFSplit("Deacons",             settings, worldFlagPointer, 0x3C67,   0x07));
             splits.Add(new WFSplit("NamelessKing",        settings, worldFlagPointer, 0x2369,   0x05));
@@ -211,7 +212,7 @@ namespace Ds3Igt
             splits.Add(new WFSplit("Dragonslayer",        settings, worldFlagPointer, 0x1467,   0x07));
             splits.Add(new WFSplit("Oceiros",             settings, worldFlagPointer, 0xF64,    0x01));
             splits.Add(new WFSplit("Wyvern",              settings, worldFlagPointer, 0x2367,   0x07, false));
-            splits.Add(new WFSplit("WyvernTele",          settings, worldFlagPointer, 0x2366,   0x04, false));
+            splits.Add(new WFSplit("WyvernTeleport",      settings, worldFlagPointer, 0x2366,   0x04, false));
             splits.Add(new WFSplit("ChampionGundyr",      settings, worldFlagPointer, 0x5A64,   0x01));
             splits.Add(new WFSplit("TwinPrinces",         settings, worldFlagPointer, 0x3764,   0x01));
             splits.Add(new WFSplit("SoulOfCinder",        settings, worldFlagPointer, 0x5F67,   0x07));
@@ -219,26 +220,21 @@ namespace Ds3Igt
             splits.Add(new WFSplit("Friede",              settings, worldFlagPointer, 0x6467,   0x07));
             //DLC2
             splits.Add(new WFSplit("DemonPrinces",        settings, worldFlagPointer, 0x75E7, 0x07, false));
-            splits.Add(new WFSplit("DemonBannerPickup",   settings, worldFlagPointer, 0x7AA5, 0x02, false));
-            splits.Add(new WFSplit("DemonTeleport",       settings, worldFlagPointer, 0x7AA5, 0x01, false));
+            splits.Add(new WFSplit("DemonPrincesBannerPickup",   settings, worldFlagPointer, 0x7AA5, 0x02, false));
+            splits.Add(new WFSplit("DemonPrincesTeleport",       settings, worldFlagPointer, 0x7AA5, 0x01, false));
             splits.Add(new WFSplit("MidirCliff",          settings, worldFlagPointer, 0x7ABC, 0x06, false));
             splits.Add(new WFSplit("Midir",               settings, worldFlagPointer, 0x7AE9, 0x05));
             splits.Add(new WFSplit("Halflight",           settings, worldFlagPointer, 0x786C, 0x00));
-            //splits.Add(new WFSplit("HalflightElevator",   settings, worldFlagPointer, 0x7AA9, 0x03, false)); //this elevator is activated by default. No suitable flag is set to split here. Using BB instead.
-            //splits.Add(new WFSplit("HalflightElevator",   settings, worldFlagPointer, 0x78BC, 0x01, false));
-            splits.Add(new WFSplit("GaelTele",            settings, worldFlagPointer, 0x7F9A, 0x06, false));
+            splits.Add(new WFSplit("GaelTeleport",        settings, worldFlagPointer, 0x7F9A, 0x06, false));
             splits.Add(new WFSplit("Gael",                settings, worldFlagPointer, 0x7FE7, 0x07));
-
             //misc splits
             splits.Add(new WFSplit("VilhelmStairs",       settings, worldFlagPointer, 0x644F,   0x05));
-            splits.Add(new WFSplit("PerimeterBonfire",    settings, worldFlagPointer, 0x2F02,   0x07, false));
             //BBSplits
-            if(_playerPos != null) { 
-                splits.Add(new BBSplit("CatacombEntrance",  settings, new BoundingBox(366, -507, -257, 372, -501, -251)));
-                splits.Add(new BBSplit("PontiffExit",       settings, new BoundingBox(397, -1211, -223, 403, -1205, -220)));
-                splits.Add(new BBSplit("SageExit",          settings, new BoundingBox(-204, -450, -246 , -199, -441, -240)));
-                splits.Add(new BBSplit("HalflightElevator", settings, new BoundingBox(-392, -268, -52, -389, -265, -45)));
-            }
+            splits.Add(new BBSplit("CatacombEntrance",  settings, new BoundingBox(366, -507, -257, 372, -501, -251)));
+            splits.Add(new BBSplit("PontiffExit",       settings, new BoundingBox(397, -1211, -223, 403, -1205, -220)));
+            splits.Add(new BBSplit("SageExit",          settings, new BoundingBox(-204, -450, -248 , -199, -441, -238)));
+            splits.Add(new BBSplit("HalflightElevator", settings, new BoundingBox(-392, -268, -52, -389, -265, -45)));
+
         }
 
         public void process(Process dsProcess, TimerModel timer, out bool loadSplitQueued, out bool finalSplitFlag)

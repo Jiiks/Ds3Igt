@@ -15,11 +15,13 @@ namespace Ds3Igt
 
         private string _ds3Path;
         private bool _ds3Located, _modExists;
+        private Ds3AutoSplitterSettingsHandler _autoSplitterSettingsHandler;
 
         public Ds3Control()
         {
             InitializeComponent();
             LocateDs3();
+            _autoSplitterSettingsHandler = new Ds3AutoSplitterSettingsHandler(this.splitSettings.Nodes, this.cb_autoSplit, this.cb_autoStartTimer);
         }
 
         private void LocateDs3(string basePath = null)
@@ -194,19 +196,10 @@ namespace Ds3Igt
 
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void treeView2_AfterCheck(object sender, TreeViewEventArgs e)
         {
-
+            if (_autoSplitterSettingsHandler != null)
+                _autoSplitterSettingsHandler.set(e.Node.Name, e.Node.Checked);
         }
 
         private void treeView2_BeforeCheck(object sender, TreeViewCancelEventArgs e)
@@ -253,14 +246,21 @@ namespace Ds3Igt
 
         }
 
-        private void AutoSplitEnableButton_Click(object sender, EventArgs e)
+        private void Ds3Control_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void Ds3Control_Load(object sender, EventArgs e)
+        private void cb_autoStartTimer_CheckedChanged(object sender, EventArgs e)
         {
+            if(_autoSplitterSettingsHandler != null)
+                _autoSplitterSettingsHandler.set(cb_autoStartTimer.Name, cb_autoStartTimer.Checked);
+        }
 
+        private void cb_autoSplit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (_autoSplitterSettingsHandler != null)
+                _autoSplitterSettingsHandler.set(cb_autoSplit.Name, cb_autoSplit.Checked);
         }
 
         private void btnUninstallNoLogo_Click(object sender, EventArgs e)
