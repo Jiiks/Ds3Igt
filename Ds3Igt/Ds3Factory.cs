@@ -15,8 +15,8 @@ namespace Ds3Igt {
         public string Description => "Dark Souls 3 In-Game Time Splits by Jiiks https://jiiks.net";
         public Version Version => Version.Parse("1.3.5");
 
-        public string XMLURL => "http://speedsouls.com/jiiks/livesplit/ds3/update.xml";
-        public string UpdateURL => "http://speedsouls.com/jiiks/livesplit/ds3/update/";
+        public string XMLURL => $"{UpdateURL}update.xml";
+        public string UpdateURL => "https://raw.githubusercontent.com/Jiiks/Ds3Igt/master/";
 
         public IComponent Create(LiveSplitState state) => new Ds3Component(state);
     }

@@ -68,7 +68,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="LiveSplit.Core">
-      <HintPath>..\..\..\..\Desktop\Souls\LS\LiveSplit.Core.dll</HintPath>
+      <HintPath>E:\Downloads 2016\LiveSplit_1.6.9\LiveSplit.Core.dll</HintPath>
     </Reference>
     <Reference Include="LiveSplit.Timer">
       <HintPath>..\..\..\..\Desktop\Souls\LS\Components\LiveSplit.Timer.dll</HintPath>
@@ -84,7 +84,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="UpdateManager">
-      <HintPath>..\..\..\..\Desktop\Souls\LS\UpdateManager.dll</HintPath>
+      <HintPath>E:\Downloads 2016\LiveSplit_1.6.9\UpdateManager.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +92,7 @@
     <Compile Include="Ds3AutoSplitter.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Ds3AutoSplitterSettingsHandler.cs" />
     <Compile Include="Ds3Component.cs" />
     <Compile Include="Ds3Control.cs">
       <SubType>UserControl</SubType>
@@ -110,6 +111,12 @@
     <EmbeddedResource Include="Ds3Control.resx">
       <DependentUpon>Ds3Control.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="update.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
