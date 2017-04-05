@@ -249,7 +249,7 @@ namespace Ds3Igt
 
         private void Ds3Control_Load(object sender, EventArgs e)
         {
-
+         
         }
 
         private void cb_autoStartTimer_CheckedChanged(object sender, EventArgs e)

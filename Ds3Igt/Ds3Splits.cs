@@ -207,8 +207,9 @@ namespace Ds3Igt
             splits.Add(new WFSplit("NamelessKing",        settings, worldFlagPointer, 0x2369,   0x05));
             splits.Add(new WFSplit("Pontiff",             settings, worldFlagPointer, 0x4B69,   0x05, false));
             splits.Add(new WFSplit("Aldrich",             settings, worldFlagPointer, 0x4B67,   0x07));
-            splits.Add(new WFSplit("AldrichTele",         settings, worldFlagPointer, 0x4B03,   0x05, false)); 
+            splits.Add(new WFSplit("AldrichTeleport",     settings, worldFlagPointer, 0x4B03,   0x05, false));
             splits.Add(new WFSplit("Yhorm",               settings, worldFlagPointer, 0x5567,   0x07));
+            splits.Add(new WFSplit("YhormTeleport",       settings, worldFlagPointer, 0x5503,   0x06, false));
             splits.Add(new WFSplit("Dragonslayer",        settings, worldFlagPointer, 0x1467,   0x07));
             splits.Add(new WFSplit("Oceiros",             settings, worldFlagPointer, 0xF64,    0x01));
             splits.Add(new WFSplit("Wyvern",              settings, worldFlagPointer, 0x2367,   0x07, false));
