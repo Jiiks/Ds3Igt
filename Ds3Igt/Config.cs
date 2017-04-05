@@ -1,6 +1,6 @@
 ﻿namespace Ds3Igt {
     public static class Config {
-        public static string Version = "1.3.5";
+        public static string Version = "1.3.6";
         public static string Module = "DarkSoulsIII";
         public static long BasePointer1310 = 0x14469ADF8;
         public static int[] Offsets1310 = { 0x9C };
