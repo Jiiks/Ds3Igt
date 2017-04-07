@@ -165,6 +165,50 @@ namespace Ds3Igt
             }
         }
 
+        private class UpgradeSplit : ISplit
+        {
+            private string _key;
+            private bool _enabled;
+            private int _upgradeLevel;
+            private TreeNode _settingsNode;
+            MemoryWatcher<int> _maxUpgradeLevel;
+
+            public UpgradeSplit(string key, TreeView settings, IntPtr maxUpgradeAddress, int upgradeLevel)
+            {
+                _key = key;
+                _enabled = true;
+                _settingsNode = settings.Nodes.Find(key, true)[0];
+                _upgradeLevel = upgradeLevel;
+                _maxUpgradeLevel = new MemoryWatcher<int>(maxUpgradeAddress);
+            }
+
+            public void init(Process dsProcess)
+            {
+                _maxUpgradeLevel.Update(dsProcess);
+                if (_maxUpgradeLevel.Current >= _upgradeLevel)
+                    _enabled = false;
+            }
+
+            public bool split(Process dsProcess, TimerModel timer, PlayerPos playerPos, out bool loadSplitQueued, out bool finalSplitFlag)
+            {
+                loadSplitQueued = false;
+                finalSplitFlag = false;
+                if (_enabled && _settingsNode.Checked)
+                {
+                    _maxUpgradeLevel.Update(dsProcess);
+                    if (_maxUpgradeLevel.Current == _upgradeLevel)
+                    {
+                        Trace.WriteLine("UpgradeSplit queued: +" + _upgradeLevel);
+                        loadSplitQueued = true;
+                        _enabled = false;
+                        return true;
+                    }
+                    return false;
+                }
+                return false;
+            }
+        }
+
         private List<ISplit> splits;
         private PlayerPos _playerPos;
         private bool initilized;
@@ -172,6 +216,7 @@ namespace Ds3Igt
         public Ds3Splits(Process dsProcess, IntPtr worldFlagPointer, TreeView settings)
         {
             initilized = false;
+            IntPtr maxUpgradePtr = (IntPtr) null;
             splits = new List<ISplit> { };
 
             switch (dsProcess.MainModule.FileVersionInfo.FileVersion)
@@ -179,13 +224,13 @@ namespace Ds3Igt
                 case "1.8.0.0": // "App v1.08, Reg v1.22"
                     _playerPos = new PlayerPos(0x4703DF8, 0xA74);
                     splits.Add(new WFSplit("PerimeterBonfire", settings, worldFlagPointer, 0x2F02, 0x07, false));
-                    
                     break;
                 case "1.11.0.0": // "App v1.11, Reg v1.30"
                     _playerPos = new PlayerPos(0x476D190, 0x50);
                     break;
                 case "1.12.0.0": // "App v1.12, Reg v1.31"
                 default:
+                    maxUpgradePtr = (IntPtr) 0x7FF51C5D1F04;
                     _playerPos = new PlayerPos(0x4763518, new int[] { 0x40, 0x28, 0x80 });
                     splits.Add(new WFSplit("PerimeterBonfire", settings, worldFlagPointer, 0x2D02, 0x07, false));
                     break;
@@ -235,7 +280,11 @@ namespace Ds3Igt
             splits.Add(new BBSplit("PontiffExit",       settings, new BoundingBox(397, -1211, -223, 403, -1205.5f, -220)));
             splits.Add(new BBSplit("SageExit",          settings, new BoundingBox(-204, -450, -248 , -199, -441, -238)));
             splits.Add(new BBSplit("HalflightElevator", settings, new BoundingBox(-392, -268, -52, -389, -265, -45)));
-
+            //upgrade
+            for(int i = 1; i < 10; i++)
+            {
+                splits.Add(new UpgradeSplit("Plus" + i, settings, maxUpgradePtr, i));
+            }
         }
 
         public void process(Process dsProcess, TimerModel timer, out bool loadSplitQueued, out bool finalSplitFlag)

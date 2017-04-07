@@ -170,11 +170,32 @@
             System.Windows.Forms.TreeNode treeNode86 = new System.Windows.Forms.TreeNode("Soul of Cinder", new System.Windows.Forms.TreeNode[] {
             treeNode84,
             treeNode85});
-            System.Windows.Forms.TreeNode treeNode87 = new System.Windows.Forms.TreeNode("Perimeter Bonfire (when lighting)");
-            System.Windows.Forms.TreeNode treeNode88 = new System.Windows.Forms.TreeNode("Vilhelm (quitout after lever pull)");
-            System.Windows.Forms.TreeNode treeNode89 = new System.Windows.Forms.TreeNode("Misc", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode87 = new System.Windows.Forms.TreeNode("+1");
+            System.Windows.Forms.TreeNode treeNode88 = new System.Windows.Forms.TreeNode("+2");
+            System.Windows.Forms.TreeNode treeNode89 = new System.Windows.Forms.TreeNode("+3");
+            System.Windows.Forms.TreeNode treeNode90 = new System.Windows.Forms.TreeNode("+4");
+            System.Windows.Forms.TreeNode treeNode91 = new System.Windows.Forms.TreeNode("+5");
+            System.Windows.Forms.TreeNode treeNode92 = new System.Windows.Forms.TreeNode("+6");
+            System.Windows.Forms.TreeNode treeNode93 = new System.Windows.Forms.TreeNode("+7");
+            System.Windows.Forms.TreeNode treeNode94 = new System.Windows.Forms.TreeNode("+8");
+            System.Windows.Forms.TreeNode treeNode95 = new System.Windows.Forms.TreeNode("+9");
+            System.Windows.Forms.TreeNode treeNode96 = new System.Windows.Forms.TreeNode("+10");
+            System.Windows.Forms.TreeNode treeNode97 = new System.Windows.Forms.TreeNode("Weapon Upgrades (next load) ", new System.Windows.Forms.TreeNode[] {
             treeNode87,
-            treeNode88});
+            treeNode88,
+            treeNode89,
+            treeNode90,
+            treeNode91,
+            treeNode92,
+            treeNode93,
+            treeNode94,
+            treeNode95,
+            treeNode96});
+            System.Windows.Forms.TreeNode treeNode98 = new System.Windows.Forms.TreeNode("Perimeter Bonfire (when lighting)");
+            System.Windows.Forms.TreeNode treeNode99 = new System.Windows.Forms.TreeNode("Vilhelm (quitout after lever pull)");
+            System.Windows.Forms.TreeNode treeNode100 = new System.Windows.Forms.TreeNode("Misc", new System.Windows.Forms.TreeNode[] {
+            treeNode98,
+            treeNode99});
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
@@ -670,13 +691,36 @@
             treeNode86.Checked = true;
             treeNode86.Name = "SoulofCinder";
             treeNode86.Text = "Soul of Cinder";
-            treeNode87.Name = "PerimeterBonfire";
-            treeNode87.Text = "Perimeter Bonfire (when lighting)";
-            treeNode88.Name = "VilhelmStairs";
-            treeNode88.Text = "Vilhelm (quitout after lever pull)";
-            treeNode89.Checked = true;
-            treeNode89.Name = "Misc";
-            treeNode89.Text = "Misc";
+            treeNode87.Name = "Plus1";
+            treeNode87.Text = "+1";
+            treeNode88.Name = "Plus2";
+            treeNode88.Text = "+2";
+            treeNode89.Name = "Plus3";
+            treeNode89.Text = "+3";
+            treeNode90.Name = "Plus4";
+            treeNode90.Text = "+4";
+            treeNode91.Name = "Plus5";
+            treeNode91.Text = "+5";
+            treeNode92.Name = "Plus6";
+            treeNode92.Text = "+6";
+            treeNode93.Name = "Plus7";
+            treeNode93.Text = "+7";
+            treeNode94.Name = "Plus8";
+            treeNode94.Text = "+8";
+            treeNode95.Name = "Plus9";
+            treeNode95.Text = "+9";
+            treeNode96.Name = "Plus10";
+            treeNode96.Text = "+10";
+            treeNode97.Checked = true;
+            treeNode97.Name = "Upgrades";
+            treeNode97.Text = "Weapon Upgrades (next load) ";
+            treeNode98.Name = "PerimeterBonfire";
+            treeNode98.Text = "Perimeter Bonfire (when lighting)";
+            treeNode99.Name = "VilhelmStairs";
+            treeNode99.Text = "Vilhelm (quitout after lever pull)";
+            treeNode100.Checked = true;
+            treeNode100.Name = "Misc";
+            treeNode100.Text = "Misc";
             this.splitSettings.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode3,
             treeNode7,
@@ -704,7 +748,8 @@
             treeNode80,
             treeNode83,
             treeNode86,
-            treeNode89});
+            treeNode97,
+            treeNode100});
             this.splitSettings.Size = new System.Drawing.Size(257, 325);
             this.splitSettings.TabIndex = 17;
             this.splitSettings.BeforeCheck += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeView2_BeforeCheck);

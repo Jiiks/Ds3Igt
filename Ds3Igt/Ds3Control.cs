@@ -229,7 +229,7 @@ namespace Ds3Igt
             else
             {
                 TreeNode parent = e.Node.Parent;
-                if (parent.Name != "Misc")
+                if (parent.Name != "Misc" && parent.Name != "Upgrades")
                 {
                     if (e.Node.Checked)
                     {

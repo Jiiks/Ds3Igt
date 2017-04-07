@@ -1,5 +1,13 @@
 ﻿<updates>
-     <update version="1.3.6">
+  <update version="1.3.7">
+    <files>
+      <file path="Components/Ds3Igt.dll" status="changed"/>
+    </files>
+    <changelog>
+      <change>Added auto splits for weapon upgrades</change>
+    </changelog>
+  </update>
+  <update version="1.3.6">
     <files>
       <file path="Components/Ds3Igt.dll" status="changed"/>
     </files>
