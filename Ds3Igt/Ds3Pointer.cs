@@ -59,8 +59,11 @@ namespace Ds3Igt {
                     _address = Config.BasePointer11100.GetAddress(Config.Offsets11100[0], _dsHandle, 8);
                     break;
                 case "1.12.0.0":
-                default:
                     _address = Config.BasePointer11200.GetAddress(Config.Offsets11200[0], _dsHandle, 8);
+                    break;
+                case "1.13.0.0":
+                default:
+                    _address = Config.BasePointer11300.GetAddress(Config.Offsets11300[0], _dsHandle, 8);
                     break;
             }
         }
