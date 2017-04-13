@@ -47,7 +47,7 @@ namespace Ds3Igt
             _finalSplitFlag = false;
             _timerInj = null;
             _worldFlagInj = null;
-            _splits = null;
+            //_splits = null;
             _initilized = false;
         }
 

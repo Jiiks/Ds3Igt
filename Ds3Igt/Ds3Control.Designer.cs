@@ -257,7 +257,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(188, 13);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Dark Souls 3 IGT Timer v1.3.5 by Jiiks";
+            this.label4.Text = "Dark Souls 3 IGT Timer v1.3.9 by Jiiks";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // linkLabel1
@@ -431,7 +431,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 13);
             this.label5.TabIndex = 20;
-            this.label5.Text = "v1.2 by B3LYP";
+            this.label5.Text = "v1.3 by B3LYP";
             // 
             // cb_autoStartTimer
             // 
