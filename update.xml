@@ -1,4 +1,12 @@
 ﻿<updates>
+  <update version="1.3.9">
+    <files>
+      <file path="Components/Ds3Igt.dll" status="changed"/>
+    </files>
+    <changelog>
+      <change>Fixed rare double split bug caused by crash at DLC1 entrance. Restart your game after the update is finished.</change>
+    </changelog>
+  </update>
   <update version="1.3.8">
     <files>
       <file path="Components/Ds3Igt.dll" status="changed"/>
