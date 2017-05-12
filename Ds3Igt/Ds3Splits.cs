@@ -234,9 +234,14 @@ namespace Ds3Igt
                     splits.Add(new WFSplit("PerimeterBonfire", settings, worldFlagPointer, 0x2D02, 0x07, false));
                     break;
                 case "1.13.0.0": // "App v1.13, Reg v1.32"
-                default:
                     maxUpgradePtr = (IntPtr)0x7FF51C5D1F04;
                     _playerPos = new PlayerPos(0x04766D18, new int[] { 0x40, 0x28, 0x80 });
+                    splits.Add(new WFSplit("PerimeterBonfire", settings, worldFlagPointer, 0x2D02, 0x07, false));
+                    break;
+                case "1.14.0.0": // "App v1.14, Reg v1.34"
+                default:
+                    maxUpgradePtr = (IntPtr)0x7FF51C5D1F04;
+                    _playerPos = new PlayerPos(0x04768E78, new int[] { 0x40, 0x28, 0x80 });
                     splits.Add(new WFSplit("PerimeterBonfire", settings, worldFlagPointer, 0x2D02, 0x07, false));
                     break;
             }
