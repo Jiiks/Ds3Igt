@@ -78,6 +78,7 @@ namespace Ds3Igt
             }
             if (_oldMillis <= 0) _oldMillis = 0;
 
+            state.IsGameTimePaused = true;
             state.SetGameTime(new TimeSpan(0, 0, 0, 0, _oldMillis <= 1 ? 1 : _oldMillis));
 
             //autostart timer. Might be worth changing this to something based on some memory flag
