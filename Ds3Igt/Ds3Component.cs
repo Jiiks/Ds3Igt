@@ -30,6 +30,7 @@ namespace Ds3Igt
             };
 
             state.OnStart += delegate {
+                state.IsGameTimePaused = true;
                 _oldMillis = 0;
             };
 
